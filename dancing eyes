@@ -1,0 +1,27 @@
+int x=0;
+int y1=0;
+int y2=0;
+int c=0;
+int d=0;
+void setup()
+{
+size(900,900);
+background(#134604);
+
+}
+void draw()
+{
+  x= (int)(Math.random()*800);
+  y1= (int)(Math.random()*800);
+  y2= (int)(Math.random()*220);
+  c = (int)(Math.random()*500);
+  d= (int)(Math.random()*500);
+  delay(1000);
+fill(c,d,y2);
+ellipse(x,y1,60,60);
+fill(x,y1,y2);
+ellipse(x+60,y1,60,60);
+fill(0,0,0);
+ellipse(x+1,y1+1,30,30);
+ellipse(x+61,y1+1,30,30);
+}
