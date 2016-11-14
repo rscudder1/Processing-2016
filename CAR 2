@@ -1,0 +1,22 @@
+class Car
+{
+  int myX=0;
+  int myY=0;
+  
+  //constructor method for Car
+  public Car(int x, int y)
+  {
+    myX=x;
+    myY=y;
+    
+    fill(#EA1131);//red
+    rect(x,y+15,40,20);
+    rect(x+15,y,20,15);
+       
+       fill(#1148EA);//blue
+        ellipseMode(CORNER);
+    ellipse(x+5,y+35,15,15);
+    ellipse(x+20,y+35,15,15);
+  }
+  
+}
