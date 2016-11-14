@@ -1,0 +1,19 @@
+class Ball
+{
+  int myX=0;
+  int myY=0;
+  
+  //constructor method for Car
+  public Ball(int x, int y)
+  {
+    myX=x;
+    myY=y;
+    
+    fill(#F7E648);//yellow
+        ellipseMode(CORNER);
+    ellipse(200,200,300,300);
+    line(238,450,460,450);
+    line(239,250,460,250);
+  }
+  
+}
