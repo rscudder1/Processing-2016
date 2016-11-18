@@ -1,0 +1,35 @@
+size(700,700);
+}
+
+void draw()
+{
+ background (0);
+ if(keyPressed)
+ {
+   if(key == CODED)
+   {
+     if(keyCode==DOWN)
+     {
+     fill(#5C5AF7);
+     }
+     if(keyCode==UP)
+     {
+     fill(#F74C20);
+     }
+     if(keyCode==LEFT)
+     {
+     fill(#20F72C);
+     }
+     if(keyCode==RIGHT)
+     {
+     fill(#F720DF);
+     }
+   }
+ }
+ else
+ {
+   fill(255,255,255);
+  }
+
+ellipse(100,100,60,60);
+}
