@@ -1,0 +1,106 @@
+int speed = 40;
+int x = 50;
+int y = 450;
+int rad = 50;
+boolean start = true;
+int black = #000000;
+color b = color (black);
+boolean end = false;
+int time = millis();
+Car auto1;
+ 
+void setup()
+{
+  size(500,500);
+  stroke(0,0,0);
+  strokeWeight(3);
+}
+
+void draw()
+{
+ background(#F7F9FF);
+ 
+
+
+ //fill(#F7F9FF);
+
+ fill(0,0,0);
+
+ line(0,335,131,335);// 3rd from bottm
+ line(0,392,131,392);// 2nd from bottom
+ line(0,448,130,448);//bottom line
+ line(0,280,130,280);//4rd from bottom
+ line(0,226,130,226);//5th from bottom
+ line(0,170,130,170); //6th from bottom
+ line(0,115,130,115);// 7th from bottom
+ line(0,58,130,58);// 8th from bottom
+ 
+ //construct parking spots right side of page
+ line (400,335,500,335); //3rd line
+ line (400,448,500,448);// bottom line
+ line (400,392,500,392);;// 2nd from bototm
+ line (400,280,500,280); // 4th from bottom
+ line (400, 225,500,225);// 5th from the bototm
+ line (400, 170,500,170); //6th from the bottom
+ line (400, 115, 500, 115); //7th from the bottom
+ line (400, 58, 500, 58); //8th from the bottom
+ 
+ line (width/2,100,250,500);// center line
+ 
+  if (start)
+ {
+   auto1 = new Car(x,y);
+   start = false;
+ }
+ else
+ {
+   auto1 = new Car(x,y);
+ }
+ System.out.println(x);
+
+ if (keyPressed)
+ {
+ if(key == CODED){
+   if(keyCode == LEFT){
+     x= x - 3;
+   } 
+   else if (keyCode == RIGHT){
+     x= x+3;
+   }
+   else if (keyCode == UP){
+       y = y-2;
+   } 
+   else if (keyCode == DOWN){
+       y= y+2;
+   }
+ }
+   
+   if (x > width-rad || x < 2) {
+     x=x-3;
+   }
+   if (x < 10 || x < rad) {
+     x=x+3;
+   }
+  
+  if (y> height-rad) { //car containment
+  y=height-rad;
+  }else if (y<2) {
+    y=3;
+  }
+ 
+//if((x > 0 && x < 150) && (y>0 && y<200 ))
+color b = get(x,y);
+
+if (b == black) //|| end == true)
+{
+  System.out.println("You Lose");
+  textSize(70);
+  fill(255,0,0);
+  text("You Lose",150,150);
+  delay(1000);
+  exit();
+  end = true;
+}
+ 
+}
+}
